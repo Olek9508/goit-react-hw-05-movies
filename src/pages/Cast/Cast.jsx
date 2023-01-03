@@ -8,7 +8,7 @@ import {
   CastText,
   CastSpan,
 } from './Cast.styled';
-import defaultImg from '../../components/Images/defaultImg.jpg';
+// import defaultImg from '../../components/Images/defaultImg.jpg';
 import {MovieContainer} from '../MovieDetails/MovieDetails.styled';
 
 export default function Cast() {
@@ -22,7 +22,7 @@ export default function Cast() {
 
   const viewPoster = profile_path => {
     if (profile_path === null) {
-      return `${defaultImg}`;
+      // return `${defaultImg}`;
     }
     return `https://image.tmdb.org/t/p/w300${profile_path}`;
   };
