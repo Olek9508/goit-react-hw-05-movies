@@ -6,7 +6,7 @@ import {
   Outlet,
 } from 'react-router-dom';
 import { ImArrowLeft } from 'react-icons/im';
-import Header from "components/Header";
+import Header from "components/Header/Header";
 import Button from "components/Batton";
 import * as movieApi from 'services/api';
 import {

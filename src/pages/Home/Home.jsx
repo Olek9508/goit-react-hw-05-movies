@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import {Link, useLocation} from 'react-router-dom';
-import Header from "components/Header";
+import { Link, useLocation } from 'react-router-dom';
+import Header from "components/Header/Header";
 import * as moviesApi from 'services/api';
 import {
   List,

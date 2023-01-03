@@ -1,10 +1,9 @@
-import { Header } from "./NavBar.styled";
-import Navigation from "components/Navigation";
+import { LinkEl } from "./NavBar.styled"
 
-export default function NavBar() {
-  return (
-    <Header>
-      <Navigation />
-    </Header>
-  )
-}
+export const NavBar = () => (
+  <nav>
+    <LinkEl to="/">Home</LinkEl>
+    <LinkEl to="/movies">Movies</LinkEl>
+  </nav>
+)
+

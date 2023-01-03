@@ -1,5 +1,5 @@
+import Header from "components/Header/Header";
 import { NotFound404 } from "./NotFound.styled";
-import Header from '../components/Header/Header';
 
 export default function NotFound() {
   return (
