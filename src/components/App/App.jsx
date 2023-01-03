@@ -8,12 +8,12 @@ import Footer from 'components/Footer/Footer';
 import Loader from 'components/LoaderSpinner/LoaderSpinner';
 
 
-const NotFound = lazy(() => import('pages/NotFound'));
+const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 const Home = lazy(() => import('pages/Home/Home'));
 const SearchMovie = lazy(() => import('pages/Movies/Movies'));
-const MovieDetails = lazy(() => import('pages/MovieDetails'));
-const Cast = lazy(() => import('pages/Cast'));
-const Reviews = lazy(() => import('pages/Reviews'));
+const MovieDetails = lazy(() => import('pages/MovieDetails/MovieDetails'));
+const Cast = lazy(() => import('pages/Cast/Cast'));
+const Reviews = lazy(() => import('pages/Reviews/Reviews'));
 
 export const App = () => {
   return (
