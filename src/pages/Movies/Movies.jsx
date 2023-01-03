@@ -6,8 +6,8 @@ import {
   useSearchParams,
  } from "react-router-dom";
 import { toast } from 'react-toastify';
- import FormSearch from "components/SearchBar/SearchBar";
- import Header from '../../components/Header';
+import FormSearch from "components/SearchBar/SearchBar";
+ import Header from "components/Header/Header";
  import FindMe from "components/FindMe";
  import * as movieApi from 'services/api';
  import {
