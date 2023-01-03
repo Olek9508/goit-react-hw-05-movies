@@ -1,8 +1,8 @@
 import { Suspense, lazy } from 'react';
-import {Routes, Route, Outlet} from 'react-router-dom';
-import AppBar from './AppBar';
-import Container from './Container';
+import { Routes, Route, Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import AppBar from './AppBar';
+import { Box } from 'components/Box/Box';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from './Footer/Footer';
 import Loader from './Loader';
@@ -16,7 +16,7 @@ const Reviews = lazy(() => import('pages/Reviews'));
 
 export const App = () => {
   return (
-    <Container>
+    <Box>
       <AppBar />
       <ToastContainer
         autoClose={5000}
@@ -35,6 +35,6 @@ export const App = () => {
         </Routes>
       </Suspense>
       <Footer />
-    </Container>
+    </Box>
   );
 };
