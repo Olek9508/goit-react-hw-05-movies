@@ -3,9 +3,9 @@ import {Link, useLocation} from 'react-router-dom';
 import Header from "components/Header";
 import * as moviesApi from 'services/api';
 import {
-  Gallery,
-  Card,
-  Title,
+  List,
+  Item,
+  Text,
 } from './Home.styled';
 
 export default function Home() {
@@ -27,23 +27,23 @@ export default function Home() {
     <>
       <Header text='TRENDING TODAY' />
       {movies && (
-        <Gallery>
+        <List>
           {movies.map(({id, poster_path, title}) => (
             <li key={id}>
               <Link to={`/movies/${id}`} state={location}>
-                <Card>
+                <Item>
                   <img
                     src={`${viewPoster(poster_path)}`}
                     alt={title}
                     width="300"
                     height="450"
                   />
-                  <Title>{title}</Title>
-                </Card>
+                  <Text>{title}</Text>
+                </Item>
               </Link>
             </li>
           ))}
-        </Gallery>
+        </List>
       )}
     </>
   )

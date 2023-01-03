@@ -1,47 +1,46 @@
 import { useState, useEffect } from "react";
 import {
-  useParams,
-  useNavigate,
+  NavLink,
   useLocation,
-  Outlet,
-} from 'react-router-dom';
-import { ImArrowLeft } from 'react-icons/im';
-import Header from "components/Header";
-import Batton from "components/Batton";
-import * as movieApi from '../../services/movies-api';
-import {
-  MovieCard,
-  MovieInfo,
-  MovieLink,
-  MovieH2,
-  MovieH3,
-} from './MovieDetails.styled';
-import NotFound from '../NotFound';
+  useNavigate,
+  useSearchParams,
+ } from "react-router-dom";
+import { toast } from 'react-toastify';
+ import FormSearch from "components/SearchBar/SearchBar";
+ import Header from '../../components/Header';
+ import FindMe from "components/FindMe";
+ import * as movieApi from 'services/api';
+ import {
+  List,
+  Item,
+  Text,
+} from '../Home/Home.styled';
 
-export default function MovieDetails() {
-  const [movie, setMovie] = useState(null);
-  const {movieId} = useParams();
-  const navigate = useNavigate();
+ export default function SearchMovie() {
+  const [searchParams] = useSearchParams();
+  const [search, setSearch] = useState(
+    searchParams.get('query') || ''
+  );
+  const [movies, setMovies] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    movieApi.getMovieId(movieId)
-      .then(response => setMovie(response));
-  }, [movieId]);
+    if (!search) return;
 
-  const movieScore = score => {
-    return Math.floor(score * 10) + '%';
-  };
+    movieApi.getMoviesSearch(search)
+      .then(response => {
+        if (response.results.length === 0) {
+          return toast.info('Sorry, there are no more movies matching your search query!!!')
+        }
+        setMovies(response.results);
+      })
+  }, [search]);
 
-  const movieGanres = genres => {
-    if (genres === null) return;
-    return genres.map(genre => genre.name).join(', ');
-  };
-
-  const onBtnClick = () => {
-    location.state
-      ? navigate(location.state.pathname + location.state.search)
-      : navigate('/');
+  const formSubmit = search => {
+    navigate(`/movies/?query=${search}`);
+    setSearch(search);
+    setMovies([]);
   };
 
   const viewPoster = poster_path => {
@@ -49,45 +48,34 @@ export default function MovieDetails() {
       return 'https://wipfilms.net/wp-content/data/posters/tt0338683.jpg';
     }
     return `https://image.tmdb.org/t/p/w300${poster_path}`;
-  };
+  }
 
   return (
     <>
-      {!movie ? (
-        <NotFound />
+      <Header text='SEARCH MOVIES' />
+      <FormSearch searchProps={formSubmit} search={search} />
+      {movies && movies.length > 0 ? (
+        <List>
+          {movies.map(({id, poster_path, title}) => (
+            <li key={id}>
+              <NavLink to={`/movies/${id}`} state={location}>
+                <Item>
+                  <img
+                    src={`${viewPoster(poster_path)}`}
+                    alt={title}
+                    width="300"
+                    height="450"
+                  />
+                  <Text>{title}</Text>
+                </Item>
+              </NavLink>
+            </li>
+          ))}
+        </List>
       ) : (
-        <>
-          <Header text={`${movie.title}`} />
-          <Batton
-            onClick={onBtnClick}
-            label={'GO BACK'}
-            arrow={<ImArrowLeft size='30' fill='#7bd4eb'/>}
-          />
-          <MovieCard>
-            <img
-              src={`${viewPoster(movie.poster_path)}`}
-              alt={movie.title}
-              width='320'
-            />
-            <MovieInfo>
-              <MovieH2>{movie.title}</MovieH2>
-              <p> User Score: {`${movieScore(movie.vote_average)}`} </p>
-              <MovieH3>Overview</MovieH3>
-              <p>{movie.overview}</p>
-              <MovieH3>Genres</MovieH3>
-              <p>{`${movieGanres(movie.genres)}`}</p>
-            </MovieInfo>
-          </MovieCard>
-          <Header text='Additional information' />
-          <MovieLink to={`/movies/${movie.id}/cast`} state={location.state}>
-            Cast
-          </MovieLink>
-          <MovieLink to={`/movies/${movie.id}/reviews`} state={location.state}>
-            Reviews
-          </MovieLink>
-          <Outlet />
-        </>
-      )}
+        <FindMe />
+      )
+      }
     </>
   )
-}
+ }

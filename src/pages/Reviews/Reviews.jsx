@@ -1,36 +1,38 @@
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { fetchGetMovieReviews } from "services/Api";
+import { useParams } from "react-router-dom";
+import * as moviesApi from 'services/api';
+import { ReviewsGallery, ReviewsItem, ReviewsTitle, ReviewsSpan, ReviewsText} from "./Reviews.styled";
+import Header from '../../components/Header/Header';
 
-export default function ReviewsView({ movieId }) {
-  const [reviewsList, setReviewsList] = useState([]);
+export default function Reviews() {
+  const [reviews, setReviews] = useState([]);
+  const {movieId} = useParams();
 
   useEffect(() => {
-    fetchGetMovieReviews(movieId).then((data) => {
-      setReviewsList(data.results);
-    });
+    moviesApi.getReviews(movieId)
+      .then(response => setReviews(response.results));
   }, [movieId]);
 
   return (
     <>
-      {reviewsList.length > 0 ? (
-        <>
-          <ul>
-            {reviewsList.map((review) => (
-              <li key={review.id}>
-                <h4>{review.author}</h4>
-                <p>{review.content}</p>
-              </li>
-            ))}
-          </ul>
-        </>
+      {reviews.length > 0
+      ? (<ReviewsGallery>
+          {reviews.map(({id, author, content}) => (
+            <ReviewsItem key={id}>
+                <ReviewsTitle>
+                  Autor : <ReviewsSpan>{author}</ReviewsSpan>
+                </ReviewsTitle>
+                <ReviewsText>{content}</ReviewsText>
+            </ReviewsItem>
+          ))}
+          </ReviewsGallery>
       ) : (
-        <p> No results</p>
-      )}
-    </>
-  );
-}
+        <ReviewsTitle>
+          <Header text='We don’t have any reviews for this movie'  />
+        </ReviewsTitle>
 
-ReviewsView.propTypes = {
-  movieId: PropTypes.string.isRequired,
-};
+      )
+      }
+    </>
+  )
+}

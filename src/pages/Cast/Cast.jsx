@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import * as moviesApi from 'services/api';
 import {
-  CastGallery,
-  CastCard,
-  CastName,
-  CastP,
+  CastList,
+  CastItem,
+  CastTitle,
+  CastText,
   CastSpan,
 } from './Cast.styled';
 import defaultImg from '../../components/Images/defaultImg.jpg';
-import {MovieHorizontal} from '../MovieDetails/MovieDetails.styled';
+import {MovieContainer} from '../MovieDetails/MovieDetails.styled';
 
 export default function Cast() {
   const [casts, setCasts] = useState(null);
@@ -29,27 +29,27 @@ export default function Cast() {
 
   return (
     <>
-      <MovieHorizontal />
+      <MovieContainer />
       {casts && (
-        <CastGallery>
+        <CastList>
           {casts.map(({id, profile_path, name, character}) => (
-            <CastCard key={id}>
+            <CastItem key={id}>
               <img
                 src={`${viewPoster(profile_path) }`}
                 alt={name}
                 width='300'
               />
-              <CastName>{name}</CastName>
-              <CastP>
+              <CastTitle>{name}</CastTitle>
+              <CastText>
                 {' '}
                 Character : <CastSpan>
                   {' '}
                   {character}{' '}
                 </CastSpan>{' '}
-              </CastP>
-            </CastCard>
+              </CastText>
+            </CastItem>
           ))}
-        </CastGallery>
+        </CastList>
       )
       }
     </>
