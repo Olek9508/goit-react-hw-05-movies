@@ -7,8 +7,8 @@ import {
  } from "react-router-dom";
 import { toast } from 'react-toastify';
 import FormSearch from "components/SearchBar/SearchBar";
- import Header from "components/Header/Header";
- import FindMe from "components/FindMe";
+import Header from "components/Header/Header";
+import Find from "components/Find/Find";
  import * as movieApi from 'services/api';
  import {
   List,
@@ -73,7 +73,7 @@ import FormSearch from "components/SearchBar/SearchBar";
           ))}
         </List>
       ) : (
-        <FindMe />
+        <Find />
       )
       }
     </>
