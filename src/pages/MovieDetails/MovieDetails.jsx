@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import { ImArrowLeft } from 'react-icons/im';
 import Header from "components/Header/Header";
-import Button from "components/Batton";
+import GoToBackButton from "components/GoToBackButton/GoToBackButton";
 import * as movieApi from 'services/api';
 import {
   MovieCardBox,
@@ -58,7 +58,7 @@ export default function MovieDetails() {
       ) : (
         <>
           <Header text={`${movie.title}`} />
-          <Button
+          <GoToBackButton
             onClick={onBtnClick}
             label={'GO BACK'}
             arrow={<ImArrowLeft size='30' fill='#7bd4eb'/>}
