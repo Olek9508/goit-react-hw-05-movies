@@ -1,7 +1,7 @@
 import {
-    LoaderContainer,
+    LoaderBox,
     LoaderSpinner,
-} from './Loader.styled';
+} from './LoadSpinner.styled';
 import {GiSpinningBlades} from 'react-icons/gi';
 import { IconContext } from 'react-icons/lib';
 
@@ -9,12 +9,12 @@ export default function Loader() {
     return (
         <IconContext.Provider value={{color: '#de14b9'}}>
             <div role='alert'>
-                <LoaderContainer>
+                <LoaderBox>
                     <LoaderSpinner>
                         <GiSpinningBlades size='90' />
                     </LoaderSpinner>
                     Loading ...
-                </LoaderContainer>
+                </LoaderBox>
             </div>
         </IconContext.Provider>
     )

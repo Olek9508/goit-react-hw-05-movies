@@ -4,8 +4,9 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NavBar from 'components/NavBar/NavBar';
 import { Box } from 'components/Box/Box';
-import Footer from './Footer/Footer';
-import Loader from './Loader';
+import Footer from 'components/Footer/Footer';
+import Loader from 'components/LoaderSpinner/LoaderSpinner';
+
 
 const NotFound = lazy(() => import('pages/NotFound'));
 const Home = lazy(() => import('pages/Home/Home'));
