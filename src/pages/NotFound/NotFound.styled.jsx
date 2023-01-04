@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-// import gif404 from '../components/Images/yalantis-interactive-404.gif';
 
 export const NotFound404 = styled.div`
     display: inline-block;
@@ -9,4 +8,3 @@ export const NotFound404 = styled.div`
     border-radius: 10px;
 `
 
-    // background-image: url(${gif404});

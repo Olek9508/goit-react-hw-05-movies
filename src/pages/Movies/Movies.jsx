@@ -31,7 +31,7 @@ import Find from "components/Find/Find";
     movieApi.getMoviesSearch(search)
       .then(response => {
         if (response.results.length === 0) {
-          return toast.info('Sorry, there are no more movies matching your search query!!!')
+          return toast.error('Wrong search request! There are no films!!')
         }
         setMovies(response.results);
       })

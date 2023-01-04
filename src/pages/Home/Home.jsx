@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <>
-      <Header text='TRENDING TODAY' />
+      <Header text='TRENDING MOVIES TODAY' />
       {movies && (
         <List>
           {movies.map(({id, poster_path, title}) => (

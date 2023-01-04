@@ -19,7 +19,7 @@ export default function FormSearch(props) {
   const handleSubmit = e => {
     e.preventDefault();
     if (search.trim() === '')
-      return toast.error('Enter your query');
+      return toast.info('Sorry, we cannot start searching with empty request field');
     props.searchProps(search);
     setSearch('');
   };
@@ -36,7 +36,7 @@ export default function FormSearch(props) {
           type="text"
           autoComplete="off"
           autoFocus
-          placeholder="Search movies and videos"
+          placeholder="Start searching..."
           value={search}
           onChange={handleChange}
         />

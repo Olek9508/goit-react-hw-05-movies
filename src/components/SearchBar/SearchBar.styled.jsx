@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-// import images from '../Images/search.png';
 
 export const SearchBar = styled.header`
   top: 0;
@@ -15,9 +14,9 @@ export const SearchBar = styled.header`
   padding-top: 12px;
   padding-bottom: 12px;
   border-radius: 10px;
-  box-shadow: 0 0 10px 1px #7bd4eb;
+  box-shadow: 0 0 10px 1px orange;
   color: #fff;
-  background-color: #7bd4eb;
+  background-color: orange;
 `;
 
 export const SearchForm = styled.form`
@@ -26,10 +25,12 @@ export const SearchForm = styled.form`
   width: 100%;
   max-width: 600px;
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 10px;
   overflow: hidden;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   &:hover {
-    box-shadow: 0 0 13px 3px #de14b9;
+    box-shadow: 0 0 13px 3px black;
   }
 `;
 
@@ -39,8 +40,7 @@ export const SearchBtn = styled.button`
   height: 48px;
   border: 0;
   background-size: 70%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: gray;
   opacity: 0.6;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
@@ -49,7 +49,6 @@ export const SearchBtn = styled.button`
     opacity: 1;
   }
 `;
-//   background-image: url(${images});
 
 export const SearchBtnLabel = styled.span`
   position: absolute;

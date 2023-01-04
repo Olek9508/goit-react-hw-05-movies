@@ -1,14 +1,14 @@
+import { MdLocalMovies } from "react-icons/md";
 import {
   FindBox,
-  FindImg,
 } from './Find.styled';
 
 export default function Find() {
   return (
     <>
       <FindBox>
-        <FindImg />
-      </FindBox>
-    </>
+        Find your favorite movies and enjoy  <MdLocalMovies size = "20px"/>
+      </FindBox >
+      </>
   )
 };

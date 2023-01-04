@@ -33,5 +33,8 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 export const Text = styled.p`
 display: flex;
 padding: 5px;
-color: #de14b9;
+color: greenyellow;
+: hover{
+  color: orange;
+}
 `;

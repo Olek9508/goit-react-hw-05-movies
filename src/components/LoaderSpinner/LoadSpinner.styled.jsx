@@ -7,7 +7,7 @@ export const LoaderBox = styled.div`
     align-items: center; 
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 30px;  
+    font-size: 15px;  
 `;
 
 export const LoaderSpinner = styled.div`

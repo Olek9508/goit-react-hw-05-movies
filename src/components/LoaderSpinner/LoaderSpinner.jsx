@@ -2,16 +2,16 @@ import {
     LoaderBox,
     LoaderSpinner,
 } from './LoadSpinner.styled';
-import {GiSpinningBlades} from 'react-icons/gi';
+import {AiOutlineLoading3Quarters} from 'react-icons/ai';
 import { IconContext } from 'react-icons/lib';
 
 export default function Loader() {
     return (
-        <IconContext.Provider value={{color: '#de14b9'}}>
+        <IconContext.Provider value={{color: 'orange'}}>
             <div role='alert'>
                 <LoaderBox>
                     <LoaderSpinner>
-                        <GiSpinningBlades size='90' />
+                        <AiOutlineLoading3Quarters size='90' />
                     </LoaderSpinner>
                     Loading ...
                 </LoaderBox>
