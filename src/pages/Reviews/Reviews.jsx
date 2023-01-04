@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import * as  moviesApi from '../../services/api';
+import * as  moviesApi from '../../api/Api';
 import { ReviewsGallery, ReviewsItem, ReviewsTitle, ReviewsSpan, ReviewsText} from "./Reviews.styled";
 import Header from '../../components/Header/Header';
 

@@ -8,7 +8,7 @@ import {
 import { ImArrowLeft } from 'react-icons/im';
 import Header from "components/Header/Header";
 import GoToBackButton from "components/GoToBackButton/GoToBackButton";
-import * as movieApi from 'services/api';
+import * as movieApi from 'api/Api';
 import {
   MovieCardBox,
   MovieInfo,

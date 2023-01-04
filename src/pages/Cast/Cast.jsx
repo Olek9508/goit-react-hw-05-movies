@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import * as moviesApi from 'services/api';
+import * as moviesApi from 'api/Api';
 import {
   CastList,
   CastItem,
