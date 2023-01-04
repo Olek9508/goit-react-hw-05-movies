@@ -22,17 +22,17 @@ export const CastItem = styled.li`
 
 export const CastTitle = styled.h3`
 font-weight: bold;
-color: #de14b9;
+color: orange;
 `;
 
 export const CastText = styled.p`
 display: flex;
 flex-direction: column;
 font-weight: bold;
-color: #7bd4eb;
+color: gray;
 `;
 
 export const CastSpan = styled.span`
   font-weight: bold;
-  color: #7bd4eb;
+  color: gray;
 `;

@@ -18,13 +18,13 @@ margin-left: auto;
 margin-right: auto;
 border-radius: 10px;
 text-align: center;
-color: #7bd4eb;
-box-shadow: 0 0 10px 1px #7bd4eb;
+color: greenyellow;
+box-shadow: 0 0 10px 1px greenyellow;
 `;
 
 export const FooterIcon = styled(BsGithub)`
-  margin-left: 5px;
-  color: #de14b9;
+  margin-left: 10px;
+  color: white;
   width: 30px;
   height: 30px;
   border-radius: 50%;

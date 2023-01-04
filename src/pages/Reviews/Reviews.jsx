@@ -20,7 +20,7 @@ export default function Reviews() {
           {reviews.map(({id, author, content}) => (
             <ReviewsItem key={id}>
                 <ReviewsTitle>
-                  Autor : <ReviewsSpan>{author}</ReviewsSpan>
+                  Author : <ReviewsSpan>{author}</ReviewsSpan>
                 </ReviewsTitle>
                 <ReviewsText>{content}</ReviewsText>
             </ReviewsItem>

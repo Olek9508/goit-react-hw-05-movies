@@ -5,7 +5,7 @@ import {
   useLocation,
   Outlet,
 } from 'react-router-dom';
-import { ImArrowLeft } from 'react-icons/im';
+import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import Header from "components/Header/Header";
 import GoToBackButton from "components/GoToBackButton/GoToBackButton";
 import * as movieApi from 'api/Api';
@@ -61,7 +61,7 @@ export default function MovieDetails() {
           <GoToBackButton
             onClick={onBtnClick}
             label={'GO BACK'}
-            arrow={<ImArrowLeft size='30' fill='#7bd4eb'/>}
+            arrow={<BsFillArrowLeftCircleFill size='30' fill='greenyellow'/>}
           />
           <MovieCardBox>
             <img
@@ -72,9 +72,9 @@ export default function MovieDetails() {
             <MovieInfo>
               <MovieTitleH2>{movie.title}</MovieTitleH2>
               <p> User Score: {`${movieScore(movie.vote_average)}`} </p>
-              <MovieTitleH3>Overview</MovieTitleH3>
+              <MovieTitleH3>Overview : </MovieTitleH3>
               <p>{movie.overview}</p>
-              <MovieTitleH3>Genres</MovieTitleH3>
+              <MovieTitleH3>Genres : </MovieTitleH3>
               <p>{`${movieGanres(movie.genres)}`}</p>
             </MovieInfo>
           </MovieCardBox>

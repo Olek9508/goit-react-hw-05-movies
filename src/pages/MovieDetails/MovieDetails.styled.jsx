@@ -6,14 +6,14 @@ export const MovieCardBox = styled.div`
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 10px 1px #7bd4eb;
+  box-shadow: 0 0 10px 1px orange;
 `;
 
 export const MovieInfo = styled.div`
   display: block;
   padding: 15px;
   margin-left: 20px;
-  color: #7bd4eb;
+  color: gray;
 `;
 
 export const MovieContainer = styled.div`
@@ -29,36 +29,45 @@ export const MovieContainer = styled.div`
   margin-right: auto;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 0 10px 1px #7bd4eb;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    #7bd4eb,
-    #7bd4eb 15px,
-    #fcfcfc 15px,
-    #fcfcfc 30px
+  box-shadow: 0 0 10px 1px orange;
+  background-color: transperant;
   );
 `;
 
 export const MovieLink = styled(NavLink)`
   display: inline-block;
   text-decoration: none;
-  color: #7bd4eb;
+  color: greenyellow;
   font-size: 25px;
   font-weight: 500;
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 10px 1px #7bd4eb;
+  box-shadow: 0 0 10px 1px greenyellow;
   &.active {
-    color: #de14b9;
-    box-shadow: 0 0 13px 3px #de14b9;
+    color: orange;
+    box-shadow: 0 0 13px 3px orange;
+  }
+  : hover{
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: orange;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 1px orange;
   }
 `;
 
 export const MovieTitleH2 = styled.h2`
-  color: #7bd4eb;
+  color: orange;
 `;
 
-export const MovieTitleH3 = styled.h3`
-  color: #7bd4eb;
+export const MovieTitleH3 = styled.h2`
+  color: orange;
 `;
+
+
+  // background-image: repeating-linear-gradient(
+  //   -45deg,
+  //   #7bd4eb,
+  //   #7bd4eb 15px,
+  //   #fcfcfc 15px,
+  //   #fcfcfc 30px

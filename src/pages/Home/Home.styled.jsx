@@ -22,10 +22,10 @@ justify-content: center;
 flex-direction: column;
 padding: 5px;
 border-radius: 10px;
-box-shadow: 0 0 10px 1px #7bd4eb;
-transition: transform var(--animation-duration) var(--timing-function);
+box-shadow: 0 0 10px 1px greenyellow;
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 &:hover {
-  box-shadow: 0 0 13px 3px #de14b9;
+  box-shadow: 0 0 13px 3px orange;
   transform: scale(1.03);
 }
 `;
